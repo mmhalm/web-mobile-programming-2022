@@ -1,5 +1,23 @@
-*{
-    margin: 0;
-    pading: 0;
-    font-family: 'Times New Roman', Times, serif;
+
+a:hover{
+    border-bottom: 1px solid;
+    background: #CDFEAA;
+}
+
+ul{
+    font-size: large;
+    color: pink;
+}
+
+table{
+    font-size: large;
+    color: blueviolet;
+}
+
+.test1 {
+    background-color: black;
+}
+
+#test2 {
+    background-color: aquamarine;
 }
