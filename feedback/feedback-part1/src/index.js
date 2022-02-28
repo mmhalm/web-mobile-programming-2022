@@ -8,7 +8,9 @@ class App extends React.Component {
     this.state = {
       good: 0,
       middle: 0,
-      bad: 0
+      bad: 0,
+      average: 0,
+      pos: 0,
     }
   }
 
@@ -16,17 +18,27 @@ class App extends React.Component {
     this.setState({
       good: this.state.good + 1
     })
+    this.updateStatistics()
   }
 
   klikMiddle = () => {
     this.setState({
       middle: this.state.middle + 1
     })
+    this.updateStatistics()
   }
   
   klikBad = () => {
     this.setState({
       bad: this.state.bad + 1
+    })
+    this.updateStatistics()
+  }
+
+  updateStatistics = () => {
+    this.setState({
+      average: (this.state.bad*(-1) + this.state.good) / (this.state.bad + this.state.good + this.state.middle),
+      pos: this.state.good / (this.state.bad + this.state.good + this.state.middle) * 100
     })
   }
 
@@ -37,16 +49,17 @@ class App extends React.Component {
           <h1>anna palautetta</h1>
           
           <button onClick={this.klikGood}>hyvä</button>
-          <button onClick={this.klikMiddle}>keskiverto</button>
+          <button onClick={this.klikMiddle}>neutraali</button>
           <button onClick={this.klikBad}>huono</button>
 
-          {this.state.oikea}
         </div>
         <div>
           <h1>statistiikka</h1>
-          {this.state.good}
-          {this.state.middle}
-          {this.state.bad}
+          <p>hyvä {this.state.good}</p>
+          <p>neutraali {this.state.middle}</p>
+          <p>huono {this.state.bad}</p>
+          <p>keskiarvo {this.state.average}</p>
+          <p>positiivista {this.state.pos} %</p>
         </div>
       </div>
     )
