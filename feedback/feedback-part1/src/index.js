@@ -15,27 +15,6 @@ class App extends React.Component {
     }
   }
 
-  // klikGood = () => {
-  //   this.setState({
-  //     good: this.state.good + 1
-  //   })
-  //   this.updateStatistics()
-  // }
-
-  // klikMiddle = () => {
-  //   this.setState({
-  //     middle: this.state.middle + 1
-  //   })
-  //   this.updateStatistics()
-  // }
-  
-  // klikBad = () => {
-  //   this.setState({
-  //     bad: this.state.bad + 1
-  //   })
-  //   this.updateStatistics()
-  // }
-
   asetaArvoon1 = (arvo) => {
     return() => {
       this.setState({ good: arvo })
@@ -54,12 +33,6 @@ class App extends React.Component {
       this.updateAverage()
     }
   }
-  
-  // asetaArvoon2 = (arvo) => () => this.setState({ middle: arvo })
-  // asetaArvoon3 = (arvo) => () => this.setState({ bad: arvo })
-
-  asetaArvoon4 = (arvo) => () => this.setState({average: arvo})
-  asetaArvoon5 = (arvo) => () => this.setState({pos: arvo})
 
   updateAverage = () => {
     this.setState({
@@ -73,12 +46,8 @@ class App extends React.Component {
       <div>
         <div>
           <h1>anna palautetta</h1>
-          
-          {/* <button onClick={this.klikGood}>hyvä</button> */}
           <Button
             handleClick={this.asetaArvoon1(this.state.good + 1)}
-            // handleClick={this.asetaArvoon4((this.state.bad*(-1) + this.state.good) / (this.state.bad + this.state.good + this.state.middle))
-            // }
             text="hyvä"
           />
           <Button
@@ -89,18 +58,9 @@ class App extends React.Component {
             handleClick={this.asetaArvoon3(this.state.bad + 1)}
             text="huono"
           />
-          {/* <button onClick={this.klikMiddle}>neutraali</button>
-          <button onClick={this.klikBad}>huono</button> */}
-
         </div>
         <div>
           <h1>statistiikka</h1>
-          {/* <Statistic 
-            handleClick={this.asetaArvoon4((this.state.bad*(-1) + this.state.good) / (this.state.bad + this.state.good + this.state.middle))}
-          />
-          <Statistic 
-          handleClick={this.asetaArvoon5(this.state.good / (this.state.bad + this.state.good + this.state.middle) * 100)}
-          /> */}
           <Statistics info={this.state} />
         </div>
       </div>
