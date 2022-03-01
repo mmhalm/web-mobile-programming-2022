@@ -82,6 +82,13 @@ const Statistics = (props) => (
   //   <p>keskiarvo {props.info.average}</p>
   //   <p>positiivisia {props.info.pos} %</p>
   // </div>
+  // if (props.info.good == props.info.bad == props.info.middle == 0) {
+  //   return (
+  //     <div>
+  //       <p>yhtään palautetta ei ole annettu</p>
+  //     </div>
+  //   )
+  // }
   <div>
     <table>
       <tr>
@@ -106,6 +113,7 @@ const Statistics = (props) => (
       </tr>
     </table>
   </div>
+  
 )
 
 const Statistic = (props) => (
