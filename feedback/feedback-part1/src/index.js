@@ -75,12 +75,36 @@ const Button = (props) => (
 )
 
 const Statistics = (props) => (
+  // <div>
+  //   <p>hyvä {props.info.good}</p>
+  //   <p>neutraali {props.info.middle}</p>
+  //   <p>huono {props.info.bad}</p>
+  //   <p>keskiarvo {props.info.average}</p>
+  //   <p>positiivisia {props.info.pos} %</p>
+  // </div>
   <div>
-    <p>hyvä {props.info.good}</p>
-    <p>neutraali {props.info.middle}</p>
-    <p>huono {props.info.bad}</p>
-    <p>keskiarvo {props.info.average}</p>
-    <p>positiivisia {props.info.pos} %</p>
+    <table>
+      <tr>
+        <td>hyvä</td>
+        <td>{props.info.good}</td>
+      </tr>
+      <tr>
+        <td>neutraali</td>
+        <td>{props.info.middle}</td>
+      </tr>      
+      <tr>
+        <td>huono</td>
+        <td>{props.info.bad}</td>
+      </tr>      
+      <tr>
+        <td>keskiarvo</td>
+        <td>{props.info.average}</td>
+      </tr>
+      <tr>
+        <td>positiivisia</td>
+        <td>{props.info.pos} %</td>
+      </tr>
+    </table>
   </div>
 )
 
